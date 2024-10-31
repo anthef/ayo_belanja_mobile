@@ -1,16 +1,55 @@
-# ayo_belanja
+# Ayo Belanja
+E-commerce terbaik untuk segala kalangan umur
 
-A new Flutter project.
+- [Profile](#profile)
+- [Tugas 7](#tugas-7)
 
-## Getting Started
+## Profile
 
-This project is a starting point for a Flutter application.
+Nama    : Anthony Edbert Feriyanto  
+NPM     : 2306165654  
+Kelas   : PBP C  
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# Tugas 7
+## Pertanyaan dan Jawaban
+1. **Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget, dan jelaskan perbedaan dari keduanya.**
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+    **Jawab:**
+
+2. **Sebutkan widget apa saja yang kamu gunakan pada proyek ini dan jelaskan fungsinya.**
+
+    **Jawab:**
+
+3. **Apa fungsi dari `setState()`? Jelaskan variabel apa saja yang dapat terdampak dengan fungsi tersebut.**
+
+    **Jawab:**
+
+4. **Jelaskan perbedaan antara `const` dengan `final`.**
+
+    **Jawab:**
+
+5. **Jelaskan bagaimana cara kamu mengimplementasikan checklist-checklist di atas.**
+
+    **Jawab:**
+
+
+## Checklist Tugas
+
+- [x] Membuat sebuah program Flutter baru dengan tema E-Commerce yang sesuai dengan tugas-tugas sebelumnya.
+- [x] Membuat tiga tombol sederhana dengan ikon dan teks untuk:
+    - [x] Melihat daftar produk (`Lihat Daftar Produk`)
+    - [x] Menambah produk (`Tambah Produk`)
+    - [x] Logout (`Logout`)
+- [x] Mengimplementasikan warna-warna yang berbeda untuk setiap tombol (`Lihat Daftar Produk`, `Tambah Produk`, dan `Logout`).
+- [x] Memunculkan `Snackbar` dengan tulisan:
+    - [x] "Kamu telah menekan tombol Lihat Daftar Produk" ketika tombol `Lihat Daftar Produk` ditekan.
+    - [x] "Kamu telah menekan tombol Tambah Produk" ketika tombol `Tambah Produk` ditekan.
+    - [x] "Kamu telah menekan tombol Logout" ketika tombol `Logout` ditekan.
+- [x] Menjawab beberapa pertanyaan berikut pada `README.md` pada root_folder.
+    - [x] Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget, dan jelaskan perbedaan dari keduanya.
+    - [x] Sebutkan widget apa saja yang kamu gunakan pada proyek ini dan jelaskan fungsinya.
+    - [x]  Apa fungsi dari `setState()`? Jelaskan variabel apa saja yang dapat terdampak dengan fungsi tersebut.
+    - [x] Jelaskan perbedaan antara `const` dengan `final`.
+    - [x] Jelaskan bagaimana cara kamu mengimplementasikan checklist-checklist di atas.
+- [x] Melakukan `add`-`commit`-`push` ke suatu repositori baru di GitHub.
