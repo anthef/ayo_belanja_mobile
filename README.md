@@ -56,13 +56,188 @@ Kelas   : PBP C
 
     **Jawab:**
 
+    Fungsi `setState()` pada Flutter digunakan untuk memberi tahu framework bahwa ada perubahan pada state sebuah widget. Saat `setState()` dipanggil, Flutter akan merender ulang bagian widget yang terdampak agar tampilan menyesuaikan dengan perubahan data. Fungsi `setState()` hanya bekerja pada Stateful Widget. Pada code, dapat dilihat bahwa tidak terdapat fungsi `setState()` karena setiap widget yang digunakan merupakan Stateless Widget. Dan semua data, seperti nama, npm, dan kelas dinyatakan dalam tipe variabel final yang diinisialisasi sekali saat pembuatan widget dan tidak berubah sepanjang waktu. 
+
+
 4. **Jelaskan perbedaan antara `const` dengan `final`.**
 
     **Jawab:**
 
+    final digunakan untuk mendeklarasikan variabel yang hanya bisa diinisialisasi satu kali, tetapi nilai inisialisasinya dapat ditentukan pada saat runtime. Sedangkan const digunakan untuk mendeklarasikan variabel yang bersifat compile-time constant, yaitu nilainya harus sudah diketahui saat kompilasi dan tidak akan berubah atau bisa disebut juga sebagai variabel yang bersifat immutable. Selain itu, setelah diberi nilai, variabel final tidak bisa diubah. Serta semua objek const secara otomatis dianggap final, tetapi tidak semua final adalah const.
+
 5. **Jelaskan bagaimana cara kamu mengimplementasikan checklist-checklist di atas.**
 
     **Jawab:**
+
+    1. Membuat `main.dart` untuk base dari app yang akan dibuat. Terdapat fungsi `main()` untuk menjalankan widget-widget yang sudah dibuat. Serta menentukan colorScheme dari app.
+    ```dart
+    void main() {
+    runApp(const MyApp());
+    }
+
+    class MyApp extends StatelessWidget {
+    const MyApp({super.key});
+    @override
+    Widget build(BuildContext context) {
+        return MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.deepPurple,).copyWith(secondary: Colors.deepPurple[400]),
+            useMaterial3: true,
+        ),
+        debugShowCheckedModeBanner: false,
+        home: MyHomePage(),
+        );
+    }
+    }
+    ```
+
+    2. Membuat beberapa variabel final, constructor, dan list warna untuk memberikan warna yang berbeda di tiap button
+    ```dart
+    MyHomePage({super.key});
+    final String npm = '2306165654';
+    final String name = 'Anthony Edbert Feriyanto';
+    final String className = 'PBP C';
+
+    final List<ItemHomepage> items = [
+        ItemHomepage("Lihat Daftar Produk", Icons.mood),
+        ItemHomepage("Tambah Produk", Icons.add),
+        ItemHomepage("Logout", Icons.logout),
+    ];
+
+    final List<Color> colors = [
+        Colors.blue,
+        Colors.green,
+        Colors.orange,
+        Colors.red,
+        Colors.purple,
+        Colors.yellow,
+    ];
+    ```
+
+    3. Membuat class `ItemHomepage` yang memiliki atribut nama dan icon
+    ```dart
+    class ItemHomepage {
+    final String name;
+    final IconData icon;
+
+    ItemHomepage(this.name, this.icon);
+    }
+    ```
+
+    4. Membuat class `ItemCard` untuk menampung class-class `ItemHomePage` untuk menampung dan styling item name, icon, dan terdapat fungsi onTap() untuk menampilkan snackbar dengan fungsi built-in.
+    ```dart
+    class ItemCard extends StatelessWidget {
+    final ItemHomepage item;
+    final Color color;
+
+    const ItemCard({super.key, required this.item, required this.color});
+
+    @override
+    Widget build(BuildContext context) {
+        return Material(
+        color: color,
+        borderRadius: BorderRadius.circular(12),
+        child: InkWell(
+            onTap: () {
+            ScaffoldMessenger.of(context)
+                ..hideCurrentSnackBar()
+                ..showSnackBar(
+                SnackBar(content: Text("Kamu telah menekan tombol ${item.name}!"))
+                );
+            },
+            child: Container(
+            padding: const EdgeInsets.all(8),
+            child: Center(
+                child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                    Icon(
+                    item.icon,
+                    color: Colors.white,
+                    size: 30.0,
+                    ),
+                    const Padding(padding: EdgeInsets.all(3)),
+                    Text(
+                    item.name,
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(color: Colors.white),
+                    ),
+                ],
+                ),
+            ),
+            ),
+        ),
+        );
+    }
+    }
+    ```
+
+    5. Membuat fungsi wajib pada widget utama. Membaut 1 row untuk menampilkan npm, nama, dan kelas. Dan juga membuat GridView untuk menampilkan `ItemCard` dan membuat item builder yang sifatnya seperti looping untuk menampilkan masing-masing button sesuai dengan list warna yang sudah dibuat.
+    ```dart
+    @override
+    Widget build(BuildContext context) {
+        return Scaffold(
+        appBar: AppBar(
+            title: const Text(
+            'Ayo Belanja',
+            style: TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+            ),
+            ),
+            backgroundColor: Theme.of(context).colorScheme.primary,
+        ),
+        body: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+                Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                    InfoCard(title: 'NPM', content: npm),
+                    InfoCard(title: 'Name', content: name),
+                    InfoCard(title: 'Class', content: className),
+                ],
+                ),
+                const SizedBox(height: 16.0),
+                Center(
+                child: Column(
+                    children: [
+                    const Padding(
+                        padding: EdgeInsets.only(top: 16.0),
+                        child: Text(
+                        'Welcome to Ayo Belanja',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18.0,
+                        ),
+                        ),
+                    ),
+                    GridView.builder(
+                        primary: true,
+                        padding: const EdgeInsets.all(20),
+                        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 3,
+                        crossAxisSpacing: 10,
+                        mainAxisSpacing: 10,
+                        ),
+                        shrinkWrap: true,
+                        itemCount: items.length,
+                        itemBuilder: (context, index) {
+                        return ItemCard(item: items[index], color: colors[index % colors.length]);
+                        },
+                    ),
+                    ],
+                ),
+                ),
+            ],
+            ),
+        ),
+        );
+    }
+    ```
 
 
 ## Checklist Tugas
