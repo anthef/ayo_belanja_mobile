@@ -294,7 +294,7 @@ Kelas   : PBP C
             ),
     ```
     Hasil implementasi Row:
-    (https://github.com/anthef/ayo_belanja_mobile/blob/main/static_file/screenshot_post/json.png)
+    (https://github.com/anthef/ayo_belanja_mobile/blob/main/static/hasil_row.png)
 
     Contoh implementasi Column:
     ```dart
@@ -310,7 +310,7 @@ Kelas   : PBP C
         ),
     ```
     Hasil implementasai Column:
-    (https://github.com/anthef/ayo_belanja_mobile/blob/main/static_file/screenshot_post/json.png)
+    (https://github.com/anthef/ayo_belanja_mobile/blob/main/static/hasil_column.png)
 
 3. **Sebutkan apa saja elemen input yang kamu gunakan pada halaman form yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!**
 
