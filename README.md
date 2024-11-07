@@ -3,6 +3,7 @@ E-commerce terbaik untuk segala kalangan umur
 
 - [Profile](#profile)
 - [Tugas 7](#tugas-7)
+- [Tugas 8](#tugas-8)
 
 ## Profile
 
@@ -259,3 +260,47 @@ Kelas   : PBP C
     - [x] Jelaskan perbedaan antara `const` dengan `final`.
     - [x] Jelaskan bagaimana cara kamu mengimplementasikan checklist-checklist di atas.
 - [x] Melakukan `add`-`commit`-`push` ke suatu repositori baru di GitHub.
+
+
+# Tugas 8
+## Pertanyaan dan Jawaban
+1. **Apa kegunaan `const` di Flutter? Jelaskan apa keuntungan ketika menggunakan `const` pada kode Flutter. Kapan sebaiknya kita menggunakan `const`, dan kapan sebaiknya tidak digunakan?**
+
+    **Jawab:**
+
+2. **Jelaskan dan bandingkan penggunaan `Column` dan `Row` pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!**
+
+    **Jawab:**
+
+3. **Sebutkan apa saja elemen input yang kamu gunakan pada halaman form yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!**
+
+    **Jawab:**
+
+4. **Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?**
+
+    **Jawab:**
+
+5. **Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?**
+
+    **Jawab:**
+
+## Checklist Tugas
+- [x] Membuat minimal satu halaman baru pada aplikasi, yaitu halaman formulir tambah item baru dengan ketentuan sebagai berikut:
+  - [x] Memakai minimal tiga elemen input, yaitu `name`, `amount`, `description`. Tambahkan elemen input sesuai dengan model pada aplikasi tugas Django yang telah kamu buat.
+  - [x] Memiliki sebuah tombol `Save`.
+  - [x] Setiap elemen input di formulir juga harus divalidasi dengan ketentuan sebagai berikut:
+    - [x] Setiap elemen input tidak boleh kosong.
+    - [x] Setiap elemen input harus berisi data dengan tipe data atribut modelnya.
+- [x] Mengarahkan pengguna ke halaman form tambah item baru ketika menekan tombol `Tambah Item` pada halaman utama.
+- [x] Memunculkan data sesuai isi dari formulir yang diisi dalam sebuah `pop-up` setelah menekan tombol Save pada halaman formulir tambah item baru.
+- [x] Membuat sebuah drawer pada aplikasi dengan ketentuan sebagai berikut:
+  - [x] Drawer minimal memiliki dua buah opsi, yaitu `Halaman Utama` dan `Tambah Item`.
+  - [x] Ketika memiih opsi `Halaman Utama`, maka aplikasi akan mengarahkan pengguna ke halaman utama.
+  -[x]  Ketika memiih opsi `Tambah Item`, maka aplikasi akan mengarahkan pengguna ke halaman form tambah item baru.
+- [x] Menjawab beberapa pertanyaan berikut pada `README.md` pada root folder (silakan modifikasi `README.md` yang telah kamu buat sebelumnya; tambahkan subjudul untuk setiap tugas).
+  - [x] Apa kegunaan `const` di Flutter? Jelaskan apa keuntungan ketika menggunakan `const` pada kode Flutter. Kapan sebaiknya kita menggunakan `const`, dan kapan sebaiknya tidak digunakan?
+  - [x] Jelaskan dan bandingkan penggunaan `Column` dan `Row` pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!
+  - [x] Sebutkan apa saja elemen input yang kamu gunakan pada halaman form yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!
+  - [x] Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?
+  - [x] Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?
+- [x] Melakukan `add`-`commit`-`push` ke GitHub.
