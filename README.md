@@ -268,21 +268,89 @@ Kelas   : PBP C
 
     **Jawab:**
 
+    Penggunaan `const` digunakan dalam meningkatkan efisiensi performa dan mengoptimalkan memori. `const` dapat membuat objek yang immutable, atau tidak bisa diubah setelah diinisialisasi, yang biasa digunakan untuk widget atau elemen UI yang statis. Objek `const` hanya dibuat satu kali di memori dan bisa digunakan berulang kali tanpa membuat salinan baru. Hal ini mengurangi alokasi memori dan mempercepat rendering UI, karena widget yang ditandai dengan `const` tidak perlu di-rebuild setiap kali tampilan di-refresh. Selain itu, dengan `const`, Flutter dapat melakukan optimalisasi lebih lanjut saat kompilasi, karena nilai-nilai tersebut sudah diketahui sejak awal, sehingga aplikasi berjalan lebih efisien.
+
+    `Const` sebaiknya digunakan untuk elemen statis yang tidak berubah, misalnya untuk teks, ikon, atau konfigurasi tetap seperti warna dan ukuran. Namun, `const` tidak cocok untuk objek dinamis yang berubah berdasarkan input pengguna atau kondisi aplikasi, karena objek tersebut akan membutuhkan rebuild saat ada perubahan. Pada objek yang nilainya tidak bisa dipastikan di awal kompilasi atau harus dinamis, seperti data dari API atau variabel yang diubah pengguna, `const` tidak bisa digunakan.
+
 2. **Jelaskan dan bandingkan penggunaan `Column` dan `Row` pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!**
 
     **Jawab:**
+    Column adalah widget yang menyusun childnya secara vertikal dari atas ke bawah. Column digunakan saat ingin menempatkan beberapa elemen di layar dengan susunan bertingkat ke bawah.
+
+    Row adalah widget yang menyusun childnya secara horizontal dari kiri ke kanan. Row digunakan saat ingin menempatkan beberapa elemen dalam satu baris atau sejajar secara horizontal.
+
+    Contoh implementasi Column:
+
+
+    Contoh implementasi Row:
+    ```dart
+    Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                InfoCard(title: 'NPM', content: npm),
+                InfoCard(title: 'Name', content: name),
+                InfoCard(title: 'Class', content: className),
+              ],
+            ),
+    ```
+    Hasil implementasi Row:
+    (https://github.com/anthef/ayo_belanja_mobile/blob/main/static_file/screenshot_post/json.png)
+
+    Contoh implementasi Column:
+    ```dart
+    Column(
+          children: [
+            Text(
+              title,
+              style: const TextStyle(fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8.0),
+            Text(content),
+          ],
+        ),
+    ```
+    Hasil implementasai Column:
+    (https://github.com/anthef/ayo_belanja_mobile/blob/main/static_file/screenshot_post/json.png)
 
 3. **Sebutkan apa saja elemen input yang kamu gunakan pada halaman form yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!**
 
     **Jawab:**
 
+    Pada halaman form yang dibuat ini, elemen input yang digunakan terdiri dari tiga TextFormField, yaitu:
+
+    - Name: Menggunakan TextFormField untuk memasukkan teks yang merepresentasikan nama produk. Field ini dilengkapi dengan validasi agar tidak kosong dan memiliki panjang karakter antara 1 hingga 1000.
+
+    - Amount: Juga menggunakan TextFormField dengan keyboardType disetel ke TextInputType.number untuk memastikan input adalah angka. Elemen ini divalidasi agar tidak kosong, harus berupa angka positif, dan tidak boleh bernilai negatif.
+
+    - Description: Menggunakan TextFormField untuk memasukkan deskripsi produk. Field ini juga divalidasi agar tidak kosong dan panjang karakter minimal 10 hingga maksimal 2000.
+
+    Dan ada elemen input lain yang tidak digunakan, seperti:
+    Checkbox: Digunakan untuk membuat opsi yang bisa dicentang, biasanya untuk persetujuan atau pengaturan pilihan biner.
+
+    - Radio: Digunakan untuk membuat pilihan dalam kelompok di mana hanya satu opsi yang dapat dipilih pada satu waktu.
+
+    - Switch: Digunakan untuk mengaktifkan atau menonaktifkan pengaturan dengan tampilan switch yang lebih interaktif.
+
+    - DropdownButton: Digunakan untuk membuat pilihan yang dapat dipilih dari daftar yang ditampilkan saat tombol ditekan.
+
+    - Slider: Digunakan untuk memilih nilai dari rentang tertentu, biasanya untuk mengatur volume, kecerahan, atau pengaturan tingkat lainnya.
+
+    - DatePicker: Digunakan untuk memilih tanggal, biasanya digunakan pada aplikasi yang memerlukan input tanggal seperti pemesanan atau penjadwalan.
+
 4. **Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?**
 
     **Jawab:**
 
+    Ya, saya mengimplementasikan tema pada aplikasi yang saya buat. Saya mendefinisikan warna utama dan warna sekunder menggunakan ThemeData dalam theme pada MaterialApp di `main.dart`. Warna utama dan sekunder diatur melalui ColorScheme. Misalnya, di kode ini, primarySwatch disetel ke Colors.deepPurple, dan warna sekunder (secondary) disetel ke warna ungu yang lebih terang.
+
 5. **Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?**
 
     **Jawab:**
+    Metode navigasi yang saya gunakan dalam aplikasi ini adalah metode `Navigator.push` dan `Navigator.pop`. Metode `Navigator.push` digunakan untuk menambahkan halaman baru ke dalam *stack* navigasi. Dengan `push`, halaman baru ditempatkan di atas halaman sebelumnya, sehingga halaman tersebut akan menjadi halaman aktif yang dilihat oleh pengguna. Halaman sebelumnya tetap ada di dalam *stack*, sehingga pengguna dapat kembali ke sana jika diperlukan.
+
+    Sebaliknya, metode `Navigator.pop` digunakan untuk kembali ke halaman sebelumnya dalam *stack*. Ketika `pop` dipanggil, Flutter menghapus halaman aktif dari *stack* dan kembali ke halaman sebelumnya. Hal ini berguna dalam situasi di mana pengguna telah menyelesaikan suatu interaksi pada halaman saat ini dan ingin kembali. 
+
+    Selain itu, saya juga membuat sebuah drawer untuk mempermudah navigasi di dalam app.
 
 ## Checklist Tugas
 - [x] Membuat minimal satu halaman baru pada aplikasi, yaitu halaman formulir tambah item baru dengan ketentuan sebagai berikut:
