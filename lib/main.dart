@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ayo_belanja/list.dart';
+import 'package:ayo_belanja/screens/list.dart';
 
 void main() {
   runApp(const MyApp());
