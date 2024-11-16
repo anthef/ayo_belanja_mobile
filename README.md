@@ -372,3 +372,6 @@ Kelas   : PBP C
   - [x] Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?
   - [x] Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?
 - [x] Melakukan `add`-`commit`-`push` ke GitHub.
+
+
+tugas 3
