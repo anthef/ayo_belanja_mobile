@@ -1,3 +1,4 @@
+import 'package:ayo_belanja/screens/list_productentry.dart';
 import 'package:flutter/material.dart';
 import 'package:ayo_belanja/screens/productentry_form.dart';
 
@@ -30,6 +31,14 @@ class ItemCard extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) => const ProductEntryFormPage(),
+              ),
+            );
+          }
+          if (item.name == "Lihat Daftar Product") {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ProductEntryPage(),
               ),
             );
           }
