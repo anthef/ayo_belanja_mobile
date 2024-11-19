@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ayo_belanja/screens/list.dart';
+import 'package:pbp_django_auth/pbp_django_auth.dart';
+import 'package:provider/provider.dart';
+import 'package:ayo_belanja/screens/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,16 +9,24 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Ayo Belanja',
-      theme: ThemeData(
-    colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.deepPurple,).copyWith(secondary: Colors.deepPurple[400]),
-        useMaterial3: true,
+    return Provider(
+      create: (_) {
+        CookieRequest request = CookieRequest();
+        return request;
+      },
+      child: MaterialApp(
+        title: 'Ayo Belanja',
+        theme: ThemeData(
+          useMaterial3: true,
+          colorScheme: ColorScheme.fromSwatch(
+            primarySwatch: Colors.deepPurple,
+          ).copyWith(secondary: Colors.deepPurple[400]),
+        ),
+        home: const LoginPage(),
       ),
-      debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
     );
   }
 }
