@@ -4,6 +4,7 @@ E-commerce terbaik untuk segala kalangan umur
 - [Profile](#profile)
 - [Tugas 7](#tugas-7)
 - [Tugas 8](#tugas-8)
+- [Tugas 9](#tugas-9)
 
 ## Profile
 
@@ -374,4 +375,50 @@ Kelas   : PBP C
 - [x] Melakukan `add`-`commit`-`push` ke GitHub.
 
 
-tugas 3
+# Tugas 9
+## Pertanyaan dan Jawaban
+1. **Jelaskan mengapa kita perlu membuat model untuk melakukan pengambilan ataupun pengiriman data JSON? Apakah akan terjadi error jika kita tidak membuat model terlebih dahulu?**
+
+    **Jawab:**
+
+2. **Jelaskan fungsi dari library http yang sudah kamu implementasikan pada tugas ini**
+
+    **Jawab:**
+
+3. **Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.**
+
+    **Jawab:**
+
+4. **Jelaskan mekanisme pengiriman data mulai dari input hingga dapat ditampilkan pada Flutter.**
+
+    **Jawab:**
+
+5. **Jelaskan mekanisme autentikasi dari login, register, hingga logout. Mulai dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.**
+
+    **Jawab:**
+
+6. **Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).**
+
+    **Jawab:**
+
+## Checklist Tugas
+- [x] Memastikan deployment proyek tugas Django kamu telah berjalan dengan baik.
+- [x] Mengimplementasikan fitur registrasi akun pada proyek tugas Flutter.
+- [x] Membuat halaman login pada proyek tugas Flutter.
+- [x] Mengintegrasikan sistem autentikasi Django dengan proyek tugas Flutter.
+- [x] Membuat model kustom sesuai dengan proyek aplikasi Django.
+- [x] Membuat halaman yang berisi daftar semua item yang terdapat pada endpoint JSON di Django yang telah kamu deploy.
+  - [x] Tampilkan name, price, dan description dari masing-masing item pada halaman ini.
+- [x] Membuat halaman detail untuk setiap item yang terdapat pada halaman daftar Item.
+  - [x] Halaman ini dapat diakses dengan menekan salah satu item pada halaman daftar Item.
+  - [x] Tampilkan seluruh atribut pada model item kamu pada halaman ini.
+  - [x] Tambahkan tombol untuk kembali ke halaman daftar item.
+- [x] Melakukan filter pada halaman daftar item dengan hanya menampilkan item yang terasosiasi dengan pengguna yang login.
+- [x] Menjawab beberapa pertanyaan berikut pada `README.md` pada root folder (silakan modifikasi `README.md` yang telah kamu buat sebelumnya; tambahkan subjudul untuk setiap tugas).
+  - [x] Jelaskan mengapa kita perlu membuat model untuk melakukan pengambilan ataupun pengiriman data JSON? Apakah akan terjadi error jika kita tidak membuat model terlebih dahulu?
+  - [x] Jelaskan fungsi dari library http yang sudah kamu implementasikan pada tugas ini
+  - [x] Jelaskan fungsi dari CookieRequest dan jelaskan mengapa instance CookieRequest perlu untuk dibagikan ke semua komponen di aplikasi Flutter.
+  - [x] Jelaskan mekanisme pengiriman data mulai dari input hingga dapat ditampilkan pada Flutter.
+  - [x] Jelaskan mekanisme autentikasi dari login, register, hingga logout. Mulai dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.
+  - [x] Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial).
+- [x] Melakukan `add`-`commit`-`push` ke GitHub.
